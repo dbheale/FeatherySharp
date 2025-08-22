@@ -52,6 +52,6 @@ jobs:
             **/*.csproj
             **/NuGet.config
       - run: dotnet restore
-      - run: dotnet pack ./src/Feathery.Unofficial.Client/Feathery.Unofficial.Client.csproj -c Release -o ./artifacts -p:ContinuousIntegrationBuild=true
+      - run: dotnet pack ./src/Feathery.Unofficial.Client.csproj -c Release -o ./artifacts -p:ContinuousIntegrationBuild=true
       - name: Publish NuGet
         run: dotnet nuget push ./artifacts/*.nupkg --api-key ${{ secrets.NUGET_API_KEY }} --source https://api.nuget.org/v3/index.json --skip-duplicate
