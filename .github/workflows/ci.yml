@@ -3,7 +3,7 @@ name: ci
 on:
   workflow_dispatch:
   push:
-    branches: [ master ] 
+    branches: [ master ]
     tags: [ 'v*' ]
   pull_request:
 
@@ -32,7 +32,6 @@ jobs:
 
       - run: dotnet --info
 
-      # IMPORTANT: build a single TFM so 8.0 jobs don't try to restore net9.0
       - run: dotnet restore -p:TargetFramework=${{ matrix.tfm }}
       - run: dotnet build -c Release --no-restore -p:TargetFramework=${{ matrix.tfm }}
       - run: dotnet test -c Release --no-build    -p:TargetFramework=${{ matrix.tfm }}
