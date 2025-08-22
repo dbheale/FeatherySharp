@@ -7,6 +7,9 @@
         <Nullable>enable</Nullable>
         <GenerateDocumentationFile>true</GenerateDocumentationFile>
         <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
+
+        <RestorePackagesWithLockFile>true</RestorePackagesWithLockFile>
+        <NuGetLockFilePath>$(SolutionDir)packages.lock.json</NuGetLockFilePath>
         
         <PackageId>Feathery.Unofficial.Client</PackageId>
         <Title>FeatherySharp (Unofficial Feathery API Client)</Title>
@@ -21,6 +24,7 @@
         <SymbolPackageFormat>snupkg</SymbolPackageFormat>
         <PublishRepositoryUrl>true</PublishRepositoryUrl>
         <EmbedUntrackedSources>true</EmbedUntrackedSources>
+        <RepoRoot>$(MSBuildThisFileDirectory)..\</RepoRoot>
     </PropertyGroup>
 
     <ItemGroup>
@@ -35,6 +39,17 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="..\README.md" Pack="true" PackagePath="\" />
+        <None Include="$(RepoRoot)README.md" Pack="true" PackagePath="\" />
+
+        <None Include="$(RepoRoot).github\workflows\ci.yml">
+            <Link>Solution Items\ci.yml</Link>
+            <Pack>false</Pack>
+            <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+        </None>
+
+        <None Include="$(RepoRoot)packages.lock.json" Condition="Exists('$(RepoRoot)packages.lock.json')">
+            <Link>Solution Items\packages.lock.json</Link>
+            <Pack>false</Pack>
+        </None>
     </ItemGroup>
 </Project>
