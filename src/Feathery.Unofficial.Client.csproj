@@ -39,8 +39,6 @@
     </ItemGroup>
 
     <ItemGroup>
-        <None Include="$(RepoRoot)README.md" Pack="true" PackagePath="\" />
-
         <None Include="$(RepoRoot).github\workflows\ci.yml">
             <Link>Solution Items\ci.yml</Link>
             <Pack>false</Pack>
@@ -50,6 +48,12 @@
         <None Include="$(RepoRoot)packages.lock.json" Condition="Exists('$(RepoRoot)packages.lock.json')">
             <Link>Solution Items\packages.lock.json</Link>
             <Pack>false</Pack>
+        </None>
+
+        <None Include="$(RepoRoot)README.md">
+          <Pack>true</Pack>
+          <PackagePath>\</PackagePath>
+          <Link>Solution Items\README.md</Link>
         </None>
     </ItemGroup>
 </Project>

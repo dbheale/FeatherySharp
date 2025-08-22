@@ -10,7 +10,11 @@
 
 - Friendly, typed client over `HttpClient`
 - Covers Accounts, Forms (CRUD), Submissions, Hidden Fields, Users, Logs, Workspaces, Documents, and AI runs
-- Minimal dependencies (`Microsoft.Extensions.Http`)
+- Minimal dependencies
+  - `Microsoft.Extensions.Http`
+  - `Microsoft.Extensions.Hosting.Abstractions`
+  - `Microsoft.Extensions.DependencyInjection.Abstractions`
+  - `Microsoft.Extensions.Options.ConfigurationExtensions`
 - DI extension for one-liner setup
 - Optional polling helper for “export PDF” flows
 
@@ -111,7 +115,7 @@ Add standard ASP.NET Core logging for request/response tracing if needed.
 
 ## Compatibility
 
-- Targets: `net8.0`, `net6.0`
+- Targets: `net8.0`, `net9.0`
 - Dependencies: `Microsoft.Extensions.Http`, `Microsoft.Extensions.DependencyInjection.Abstractions`, `Microsoft.Extensions.Hosting.Abstractions`, `Microsoft.Extensions.Http`, `Microsoft.Extensions.Options.ConfigurationExtensions`, `Microsoft.SourceLink.GitHub`
 
 ## Contributing
@@ -124,7 +128,7 @@ PRs welcome! Please:
 ## Release & versioning
 
 - **SemVer** (0.x while we stabilize)
-- Create a Git tag `vX.Y.Z` on `main` to publish to NuGet via GitHub Actions.
+- Create a Git tag `vX.Y.Z` on `master` to publish to NuGet via GitHub Actions.
 
 ## Security
 
@@ -136,4 +140,4 @@ MIT © 2025 David Heale
 
 ---
 
-**Disclaimer**: This is an **unofficial** SDK and not endorsed by Feathery.
+**Disclaimer**: This is an _**unofficial**_ SDK and not endorsed by Feathery.
