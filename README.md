@@ -27,8 +27,7 @@ dotnet add package Feathery.Unofficial.Client
 ## Quick start
 
 ```csharp
-using Feathery.Unofficial.Client;
-using Feathery.Unofficial.Client.Models;
+using Feathery.Unofficial.Client.Installer;
 
 var builder = WebApplication.CreateBuilder(args);
 
